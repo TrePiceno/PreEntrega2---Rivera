@@ -1,0 +1,76 @@
+// Variables
+
+@import "../base/variables";
+
+/* servicios y productos */
+/* sección */
+
+.altura_grid {
+    justify-content: center;
+    align-content: center;
+    margin-top: 50px;
+
+    .img_articulo {
+        width: 20vw;
+        border-radius: 10px;
+    }
+}
+
+div {
+    h3 {
+        
+        position: relative;
+        margin-top: 10%;
+    }
+}
+
+/* Slider con animación */
+
+.slider {
+
+    width: 50vw;
+    height: auto;
+    margin: auto;
+    overflow: hidden;
+
+    .slide-track {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        animation: scroll 40s linear infinite;
+        -webkit-animation: scroll 40s linear infinite;
+        width: calc(350px * 12);
+        margin: 100px 0px;
+
+        .slide {
+            width: 80px;
+
+            img {
+                width: 100%;
+                border-radius: 10px;
+            }
+        }
+    }
+}
+
+@keyframes scroll {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    100% {
+        -webkit-transform: translateX(calc(-200px * 6));
+        transform: translateX(calc(-200px * 6));
+    }
+}
+
+/* Media queries HTML servicios y productos */
+
+@media (max-width: 991px) {
+
+    .img_articulo {
+        display: none;
+    }
+
+}

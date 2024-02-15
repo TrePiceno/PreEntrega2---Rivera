@@ -1,0 +1,240 @@
+// Variables
+
+@import "../base/variables";
+@import "../base/mixin";
+
+/* index */
+
+body {
+    background-color: $color-secundario;
+    font-family: $fuente-tipografica;
+    margin: auto;
+}
+
+
+/* Barra de navegación */
+
+.menu {
+        height: $altura-header;
+    }
+.barrnav {
+    @include flex;
+    height: 100%;
+    position: relative;
+    background-color: $color-blanco;
+        a {
+            img {
+                width: 100px;
+                padding: 10px;
+                filter: drop-shadow(-8px 8px 5px rgb(57, 57, 57));
+                }
+        }
+        
+            
+.list_icon {
+    color: $color-primario;
+    cursor: pointer;
+    
+    }
+
+.menu_hamburguesa:checked+.ul_links {
+    height: calc(100vh - $altura-header);
+        a {
+            color: $color-secundario;
+        }
+        a:hover {
+            color: $color-primario;
+            font-size: larger;
+        }
+    }
+        
+ul {
+    gap: 1rem;
+    margin-right: 10px;
+    
+    li {
+    list-style: none;
+    
+        a {
+        text-decoration: none;
+        font-weight: bold; 
+        color: $color-primario;
+            }
+        }
+    }
+.ul_links {
+        width: 100%;
+        z-index: 3;
+        font-size: 1.8rem;
+        background-image: linear-gradient(0deg,
+                rgba(0, 0, 0, 0.5),
+                rgba(0, 0, 0, 0.5)), url(../img/menu_desplegado.jpg);
+        height: 0;
+        background-size: cover;
+        overflow: hidden;
+        position: absolute;
+        top: $altura-header;
+        @include flex-center;
+        flex-direction: column;
+        transition: all .5s;
+    }
+}
+
+/* Main */
+
+    h1 {
+        text-align: center;
+        width: 50%;
+        margin: 5vh auto;
+        text-transform: uppercase;
+        font-size: medium;
+        font-weight: bolder;
+    }
+
+
+/* Banner */
+
+#banner {
+    margin-top: 50px;
+    @include flex-center;
+    text-align: center;
+    height: 70vh;
+    color: $color-blanco;
+    background-image: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)), url(../img/pexels-fauxels-3183183.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* Sección */
+
+section {
+
+    text-align: justify;
+
+    div {
+
+        img {
+            border-radius: 15px;
+            display: none;
+        }
+
+        p{
+
+            a {
+                padding: 10px;
+                background-color: $color-primario;
+                text-decoration: none;
+                font-weight: bold;
+                color: $color-blanco;
+            }
+        }
+        
+    }
+}
+
+.container {
+    text-align: center;
+    height: 40vh;
+    @include flex;
+    margin: 150px auto;
+    }
+
+/* Footer */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: $color-primario;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 5px 0;
+    color: $color-secundario;
+
+        div {
+            
+            p {
+                margin: 5px 0;
+                font-size: smaller;
+            }
+
+            a{
+                padding: 10px;
+
+                .iconos {
+                    width: 1.5rem;
+                    color: black;
+                }
+            }
+        }
+}
+
+/* Media queries index  */
+
+@media (max-width:767px) {
+
+    body {
+        max-width: 100vw;
+    }
+
+    section {
+
+        div {
+    
+            img {
+                display: none;
+            }
+        }
+    }
+
+}
+
+/* Breakpoint Bootstrap  */
+@media (min-width:992px) {
+
+    body {
+        max-width: 65vw;
+    }
+
+    .barrnav {
+        justify-content: space-between;
+        .label_hamburguesa {
+            display: none;
+        }
+        .ul_links {
+            position: static;
+            width: auto;
+            height: auto;
+            font-size: 1rem;
+            flex-direction: row;
+            background-image: none;
+            background-color: $color-blanco;
+
+                a:hover {
+                    color: $color-hover;
+                    font-size: larger;
+                }
+        }
+        .menu_hamburguesa:checked+.ul_links {
+            height: $altura-header;
+            transition: all .0s;
+            a {
+                color: $color-primario;
+            }
+        }
+    }
+
+    section {
+
+        div {
+    
+            img {
+                display: inline-block;
+            }
+        }
+    }
+
+}

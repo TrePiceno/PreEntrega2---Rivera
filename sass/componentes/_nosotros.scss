@@ -1,0 +1,99 @@
+// Variables
+
+@import "../base/variables";
+
+// Mixin
+
+@import "../base/mixin";
+
+/* nosotros */
+
+/* card */
+
+.tarjeta {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    
+}
+
+.carta {
+    @include carta (#fff, 15px, 20px);
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    
+
+    .card_img {
+        width: 50%;
+        height: 100%;
+        border-radius: 15px;
+        align-self: center;
+    
+    }
+
+    .card_textos {
+        width: 50%;
+        align-self: center;
+        
+        .card__extracto {
+            line-height: 20px;
+            color: #6D6D6D;
+            margin-bottom: 20px;
+        }
+
+    }
+}
+
+section{
+    div {
+        p{
+            
+            a:hover {
+                background-color: $color-hover;
+            }
+        }
+    }
+}
+
+/* Media queries HTML nosotros */
+
+
+@media (max-width:767px) {
+
+    .tarjeta {
+        
+
+        .card_img {
+            display: none;
+        }
+    
+        .card_textos {
+            margin: auto;
+            text-align: center;
+        }
+        
+    }
+
+}
+
+@media (min-width:768px) {
+
+
+    .tarjeta {
+
+        .carta {
+
+            .card_textos {
+                margin: auto;
+                text-align: center;
+            }
+            
+        }
+    }
+}
+
+#margen_carta {
+    margin-bottom: 50px;
+}
